@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Success!</h2>
+    <p>You are logged in as {{ user.email }} </p>
+    
+    {% if user.Buyer %}
+    <p>Buyer</p>
+    {{ user.Buyer.description }}
+    {% endif %}
+
+    {% if user.Seller %}
+    <p>Seller</p>
+    {{ user.Seller.description }} - (€{{user.Seller.price}})
+    {% endif %}
+{% endblock %}
