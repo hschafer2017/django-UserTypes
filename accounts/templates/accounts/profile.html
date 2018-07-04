@@ -1,15 +1,11 @@
-{% extends "base.html" %}
-{% block content %}
-    <h2>Success!</h2>
-    <p>You are logged in as {{ user.email }} </p>
-    
-    {% if user.Buyer %}
-    <p>Buyer</p>
-    {{ user.Buyer.description }}
-    {% endif %}
+{% extends 'base.html' %}
 
-    {% if user.Seller %}
-    <p>Seller</p>
-    {{ user.Seller.description }} - (€{{user.Seller.price}})
-    {% endif %}
-{% endblock %}
+{% block content %}
+<h3>Profile</h3>
+
+<img src="{{MEDIA_URL}}{{user.Profile.image}}" width="100px"></img>
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Bio: {{ user.Profile.description }}</p>
+
+{% endblock content %}
