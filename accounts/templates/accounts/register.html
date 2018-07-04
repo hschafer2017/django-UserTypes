@@ -6,6 +6,7 @@
 <form method = 'POST'>
    {% csrf_token %}
    {{ forms | as_bootstrap }}
+   {{ profile_form | as_bootstrap }}
     <input type="submit" value="Submit"/>
 </form>
 
